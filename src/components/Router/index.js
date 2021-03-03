@@ -8,7 +8,7 @@ import {
 
 import PrivateRoute from './PrivateRoute';
 import Login from "../Login/Login";
-import HomePage from "../HomePage/index"
+import HomePage from "../HomePage/HomePage"
 
 class CustomRoute extends Component {
     render() {

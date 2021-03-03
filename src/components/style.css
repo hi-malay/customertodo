@@ -42,7 +42,7 @@
 
 .MuiPaper-root.MuiCard-root {
     box-shadow: 0px 25px 30px rgba(112, 136, 210, 0.2);
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
@@ -140,12 +140,60 @@ div.max-width {
     margin: 0 auto;
 }
 
-div.max-width.max-width-padd {
-    padding: 0 20px;
-}
 
 .drawer-visible-xs {
     display: none !important;
+}
+
+.top-head {
+    background-color: #cae2eb !important;
+}
+
+.head-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.intitle {
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.intitle-account {
+    font-size: 14px;
+    color: rgb(74,
+            74,
+            233);
+
+}
+
+.intitle-due {
+    font-size: 12px;
+    color: rgb(250, 28, 28);
+}
+
+.MuiCardContent-root:last-child {
+    padding-bottom: 10px !important;
+}
+
+.more-height {
+    height: 100%;
+    border: 1px solid rgb(240, 240, 240);
+    padding: 20px;
+    background-color: #f1eded !important;
+}
+
+.emoji {
+    color: red;
+
+}
+
+.background-grey {
+    min-height: 50px;
+    padding: 15px;
+    background-color: #fff;
 }
 
 @media (max-width: 991px) {

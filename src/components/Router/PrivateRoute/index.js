@@ -11,6 +11,8 @@ import { API } from '../../common/constant';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
+import PersistentDrawerRight from '../../common/Drawer';
+
 export default function PrivateRoute(props) {
     const [userData, setUserData] = React.useState({});
     const [transData, setTransData] = React.useState({});
@@ -23,10 +25,13 @@ export default function PrivateRoute(props) {
 
     return (
         <Route render={() =>
-            <div className="bg-grey full-len mt-3" >
+            <div className="bg-grey full-len " >
                 <ContextMain.Provider value={userData}>
-                    <div className="max-width max-width-padd mt-4">
-                        <div className="col-md-12 mt-5">
+                    <div className="max-width max-width-padd ">
+                        {/* <div className="col-md-4 mt-5">
+                            <PersistentDrawerRight />
+                        </div> */}
+                        <div className="mt-1">
                             <props.component value={transData} />
                         </div>
                     </div>
