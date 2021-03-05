@@ -31,7 +31,7 @@ export default function PrivateRoute(props) {
                         {/* <div className="col-md-4 mt-5">
                             <PersistentDrawerRight />
                         </div> */}
-                        <div className="mt-1">
+                        <div className=" margin-top-head">
                             <props.component value={transData} />
                         </div>
                     </div>

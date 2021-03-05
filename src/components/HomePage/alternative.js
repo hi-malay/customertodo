@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import './../style.css';
+import './abc.css';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
@@ -14,22 +15,27 @@ const item2 = {
     name: "Wash the car"
 }
 
+const item3 = {
+    id: v4(),
+    name: "Do nothing"
+}
+
 const InitialList = () => {
 
     const [text, setText] = useState("")
     const [state, setState] = useState({
         "todo": {
             title: "Todo",
-            items: [item, item2]
+            items: [item, item2, item3]
         },
-        "in-progress": {
-            title: "In Progress",
-            items: []
-        },
-        "done": {
-            title: "Completed",
-            items: []
-        }
+        // "in-progress": {
+        //     title: "In Progress",
+        //     items: []
+        // },
+        // "done": {
+        //     title: "Completed",
+        //     items: []
+        // }
     })
 
     const handleDragEnd = ({ destination, source }) => {
@@ -86,11 +92,13 @@ const InitialList = () => {
             </div>
             <DragDropContext onDragEnd={handleDragEnd}>
                 {_.map(state, (data, key) => {
+                    console.log("load", data)
                     return (
                         <div key={key} className={""}>
                             <h3>{data.title}</h3>
                             <Droppable droppableId={key}>
                                 {(provided, snapshot) => {
+                                    console.log("load3", provided)
                                     return (
                                         <div
                                             ref={provided.innerRef}
@@ -98,10 +106,11 @@ const InitialList = () => {
                                             className={"droppable-col"}
                                         >
                                             {data.items.map((el, index) => {
+                                                console.log("load2", el)
                                                 return (
                                                     <Draggable key={el.id} index={index} draggableId={el.id}>
                                                         {(provided, snapshot) => {
-                                                            console.log(snapshot)
+                                                            console.log('loadSnap', snapshot)
                                                             return (
                                                                 <div
                                                                     className={`item ${snapshot.isDragging && "dragging"}`}
