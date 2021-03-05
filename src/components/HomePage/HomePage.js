@@ -66,7 +66,11 @@ const InitialList = () => {
     const [priorityError, setPriorityError] = useState(false)
     const [priorityErrorLabel, setPriorityErrorLabel] = useState("")
     const [dueDate, setDueDate] = useState(new Date())
+    const [dueDateError, setDueDateError] = useState(true)
+    const [dueDateErrorLabel, setDueDateErrorLabel] = useState("")
     const [dueTime, setDueTime] = useState(new Date())
+    const [dueTimeError, setDueTimeError] = useState(true)
+    const [dueTimeErrorLabel, setDueTimeErrorLabel] = useState("")
     const [weeks, setWeeks] = useState("")
     const [saveDetailsEnable, setSaveDetailsEnable] = useState(true)
     const [state, setState] = useState({
@@ -137,12 +141,17 @@ const InitialList = () => {
     };
 
     const handleDateChange = (event) => {
+        setDueTimeError(false)
+        setDueTimeErrorLabel("")
+        setDueDateError(false)
+        setDueDateError("")
+        setSaveDetailsEnable(true)
         let dt1 = new Date()
         let dt2 = event
         var diff = (dt2.getTime() - dt1.getTime()) / 1000;
         diff /= (60 * 60 * 24 * 7);
         let weeks = Math.abs(Math.round(diff));
-        console.log(weeks)
+        // console.log(weeks)
         setWeeks(weeks)
     }
 
@@ -160,6 +169,10 @@ const InitialList = () => {
         setStatusErrorLabel("")
         setPriorityError(false)
         setPriorityErrorLabel("")
+        setDueTimeError(false)
+        setDueTimeErrorLabel("")
+        setDueDateError(false)
+        setDueDateError("")
         setSaveDetailsEnable(true)
     };
 
@@ -233,17 +246,29 @@ const InitialList = () => {
             setPriorityErrorLabel(PAGE_TWO_ERROR_TEXT.firstNameLabel)
             return;
         }
+        else if (weeks === "") {
+            setSaveDetailsEnable(false)
+            setDueDateError(true)
+            setDueDateErrorLabel(PAGE_TWO_ERROR_TEXT.firstNameLabel)
+            return;
+        }
+        else if (dueTime === "") {
+            setSaveDetailsEnable(false)
+            setDueTimeError(true)
+            setDueTimeErrorLabel(PAGE_TWO_ERROR_TEXT.firstNameLabel)
+            return;
+        }
         setopenModal(false)
         addItem()
     }
 
     const draggableComponent = () => {
-        console.log("date", dueDate)
+
         return (
             <div className="row">
                 <DragDropContext onDragEnd={handleDragEnd}>
                     {_.map(state, (data, key) => {
-                        console.log("load", data.items.length)
+
                         return (
                             <div key={key} className={""}>
                                 <div className="col-md-3">
@@ -254,18 +279,18 @@ const InitialList = () => {
                                     </Card>
                                     <Droppable droppableId={key}>
                                         {(provided, snapshot) => {
-                                            console.log("load3", provided)
+
                                             return (
                                                 <Card className="custom-card card-dashboard more-height"
                                                     ref={provided.innerRef}
                                                     {...provided.droppableProps}
                                                 >
                                                     {data.items.map((el, index) => {
-                                                        console.log("load2", el)
+                                                        // console.log("load2", el)
                                                         return (
                                                             <Draggable key={el.id} index={index} draggableId={el.id}>
                                                                 {(provided, snapshot) => {
-                                                                    console.log('loadSnap', snapshot)
+                                                                    // console.log('loadSnap', snapshot)
                                                                     return (
                                                                         <div className="background-grey mt-4"
                                                                             ref={provided.innerRef}
@@ -448,8 +473,8 @@ const InitialList = () => {
                                         format="y-MM-dd"
                                         required={true}
                                     />
-                                    {priorityError ?
-                                        (<FormHelperText className="mt-2">{priorityErrorLabel}</FormHelperText>
+                                    {dueDateError ?
+                                        (<FormHelperText className="mt-2">{dueDateErrorLabel}</FormHelperText>
                                         ) : ""
                                     }
                                 </div>
@@ -463,8 +488,8 @@ const InitialList = () => {
                                         format="h:mm:ss a"
                                         required={true}
                                     />
-                                    {priorityError ?
-                                        (<FormHelperText className="mt-2">{priorityErrorLabel}</FormHelperText>
+                                    {dueTimeError ?
+                                        (<FormHelperText className="mt-2">{dueTimeErrorLabel}</FormHelperText>
                                         ) : ""
                                     }
                                 </div>
