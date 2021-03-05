@@ -156,6 +156,10 @@ const InitialList = () => {
         setAccountErrorLabel("")
         setAssignedToError(false)
         setAssignedToErrorLabel("")
+        setStatusError(false)
+        setStatusErrorLabel("")
+        setPriorityError(false)
+        setPriorityErrorLabel("")
         setSaveDetailsEnable(true)
     };
 
@@ -487,8 +491,6 @@ const InitialList = () => {
     return (
         <div>
             <div>
-                {/* <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-                <button onClick={addItem}>Add</button> */}
                 <Button variant="contained" color="primary" className={"btn-class menu-icon mt-4"} onClick={handleAddSub}>Add task</Button>
             </div>
 
