@@ -8,7 +8,7 @@
 2. cd template
 3. npm install
 4. npm start
-5. go to: http://localhost:3000/template/home on browser
+5. go to: http://localhost:3000 on browser
 
 Dragable Todo app lets you:
 1. Add Todo
