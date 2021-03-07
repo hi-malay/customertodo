@@ -1,7 +1,5 @@
 export const PAGE_TWO_ERROR_TEXT = {
     'firstNameLabel': "Invalid Detail.",
-
-
 }
 
 export const API = {

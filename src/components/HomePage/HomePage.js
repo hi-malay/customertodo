@@ -76,11 +76,11 @@ const InitialList = () => {
     const [state, setState] = useState({
         "todo": {
             title: "Todo",
-            items: [item, item2, item3]
+            items: [item, item2]
         },
         "in-progress": {
             title: "In Progress",
-            items: []
+            items: [item3]
         },
         "done": {
             title: "Completed",
@@ -516,6 +516,8 @@ const InitialList = () => {
     return (
         <div>
             <div>
+                <h3 className="modal-title-env">Environment: <b>{process.env.NODE_ENV} </b></h3>
+                {console.log("yep", process.env.REACT_APP_ENV)}
                 <Button variant="contained" color="primary" className={"btn-class menu-icon mt-4"} onClick={handleAddSub}>Add task</Button>
             </div>
 
