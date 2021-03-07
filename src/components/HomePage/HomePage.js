@@ -23,7 +23,7 @@ import DateTimePicker from 'react-datetime-picker';
 const item = {
     id: v4(),
     taskName: "Clean the house",
-    accountName: "1569D Josh Biden",
+    accountName: "Josh Biden",
     dueDate: "4",
     assignedTo: "ST"
 }
@@ -31,7 +31,7 @@ const item = {
 const item2 = {
     id: v4(),
     taskName: "Wash the car",
-    accountName: "1569D Narender Modi",
+    accountName: "Narender Modi",
     dueDate: "3",
     assignedTo: "ST"
 }
@@ -39,7 +39,7 @@ const item2 = {
 const item3 = {
     id: v4(),
     taskName: "Do nothing",
-    accountName: "1569D Mamta Banerjee",
+    accountName: "Mamta Banerjee",
     dueDate: "1",
     assignedTo: "TT"
 }
