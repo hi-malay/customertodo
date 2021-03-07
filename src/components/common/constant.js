@@ -1,9 +1,5 @@
 export const PAGE_TWO_ERROR_TEXT = {
-    'firstNameLabel': "Invalid First Name.",
-    'amountLabel': "Invalid Company Name.",
-    'mobileNumberLabel': "Invalid Mobile Number.",
-    "selectErrorLabel": "No name selected"
-
+    'firstNameLabel': "Invalid Detail.",
 }
 
 export const API = {

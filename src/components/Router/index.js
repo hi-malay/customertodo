@@ -14,7 +14,7 @@ class CustomRoute extends Component {
     render() {
         return (
             <div>
-                <Router basename="/template">
+                <Router basename="/customertodo">
                     <Switch>
                         <PrivateRoute path="/home" component={HomePage} />
                         <Route path="/" component={Login} />
