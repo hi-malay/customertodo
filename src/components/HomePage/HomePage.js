@@ -516,7 +516,7 @@ const InitialList = () => {
     return (
         <div>
             <div>
-                <h3 className="modal-title-env">Environment: <b>{process.env.NODE_ENV} </b></h3>
+                <h3 className="modal-title-env">Environment: <b>{process.env.REACT_APP_ENV} </b></h3>
                 {console.log("yep", process.env.REACT_APP_ENV)}
                 <Button variant="contained" color="primary" className={"btn-class menu-icon mt-4"} onClick={handleAddSub}>Add task</Button>
             </div>
